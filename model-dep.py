@@ -7,9 +7,9 @@ boto3.setup_default_session(profile_name='trep-acpt')
 region = boto3.Session().region_name
 sm_client = boto3.client('sagemaker', region_name=region)
 # role= "arn:aws:iam::xxx:role/default-sagemaker-execution-role"
-role= "arn:aws:iam::xxxx:role/default-sagemaker-execution-role"
+role= "arn:aws:iam::xxx:role/default-sagemaker-execution-role"
 
-model_version_arn = "arn:aws:sagemaker:us-east-1:xxx:model-package/xgboost-demo-package-group/1"
+model_version_arn = "arn:aws:sagemaker:us-east-1:xx:model-package/xgboost-demo-package-group/1"
 model_name = 'xgboost-demo-model-1'
 endpoint_config_name = 'xgboost-demo-model-endpoint-config-1'
 endpoint_name = 'xgboost-demo-model-endpoint-1'
@@ -44,6 +44,6 @@ def create_endpoint():
     EndpointConfigName=endpoint_config_name)
   print(create_endpoint_response['EndpointArn'])
 
-# create_model();
-# create_endpoint_config();
+create_model();
+create_endpoint_config();
 create_endpoint();#
